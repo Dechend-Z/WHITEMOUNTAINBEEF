@@ -1,0 +1,54 @@
+{
+  "title": "WHITE MOUNTAIN HALAL BEEF — เลือกโลกภาพของเว็บ",
+  "question": "ทิศทางที่สุ่มได้คือ 'ป้ายร้านน้ำชาภาคใต้' เลือกใช้ เลือกทางเลือกอื่น หรือสุ่มใหม่",
+  "options": [
+    {
+      "id": "assigned",
+      "kind": "assigned",
+      "label": "ป้ายร้านน้ำชาสตูล (Kedai Signboard)",
+      "kicker": "THE ROLL",
+      "lineage": "ป้ายเขียนมือร้านน้ำชา/โรตีมุสลิมภาคใต้ หลายอักษรในป้ายเดียว",
+      "thesis": "เว็บคือป้ายร้านเขียนมือ ชื่อสินค้าและราคาเขียนหลายภาษาเคียงกัน เหมือนป้ายร้านน้ำชาในสตูลที่มีไทย ยาวี และอังกฤษอยู่ด้วยกัน",
+      "palette": ["#1f5a3d", "#f3ead6", "#c8231f", "#e2b33c"],
+      "materials": ["แผ่นสังกะสี/ไม้ทาสีเรียบ", "ตัวอักษรเขียนพู่กัน", "ขอบเส้นคู่"],
+      "viewport": "ป้ายเขียวใหญ่เต็มจอ 'WHITE MOUNTAIN HALAL BEEF' ตัวเขียนมือ, ภาพแพ็กเกจแดงจริงวางบนป้าย, แถวราคา 4 สินค้า, ปุ่ม 'สั่ง/ขอราคา' แบบป้ายห้อย",
+      "risk": "ถ้าทำไม่ถึงจะกลายเป็นป้ายวินเทจสำเร็จรูป",
+      "raised": [
+        { "from": "challenger-ligne", "raise": "สีเรียบไม่ไล่เฉด ไม่มีเงา เส้นหนาเท่ากันทั้งหน้า และแดงใช้เฉพาะสินค้าที่กำลังขาย" },
+        { "from": "challenger-storm", "raise": "ตัวอักษรชื่อแบรนด์เป็นมวลขนาดอนุสาวรีย์ ไม่ใช่หัวข้อเล็กบนพื้นว่าง" },
+        { "from": "challenger-section", "raise": "ทั้งหน้าอ่านเป็นแผ่นป้ายเดียวต่อเนื่อง ส่วนต่างๆ แบ่งด้วยคานป้าย ไม่ใช่การ์ดลอย" }
+      ]
+    },
+    {
+      "id": "model-pick",
+      "kind": "pick",
+      "label": "กล่องของฝากฮาลาล (Red & Gold Gift Box)",
+      "kicker": "IMPECCABLE’S PICK",
+      "lineage": "บรรจุภัณฑ์ OTOP แดงทองของแบรนด์เอง",
+      "thesis": "เว็บเปิดเหมือนกล่องของขวัญแดงทอง สินค้าวางอยู่ในช่องกล่อง",
+      "palette": ["#b5161b", "#d8b25a", "#fff7ea"],
+      "materials": ["กระดาษกล่องแดง", "ฟอยล์ทอง"],
+      "viewport": "ฝากล่องแดงพร้อมโลโก้ภูเขาทอง เปิดแล้วเห็นสินค้า 4 ช่อง",
+      "risk": "แดงทองเป็นสิ่งที่ของฝากไทยส่วนใหญ่ใช้ ค่อนข้างคุ้นตา"
+    },
+    { "id": "challenger-ligne", "kind": "challenger", "catalogId": "pop-culture-shelf-ligne-claire-album", "label": "Ligne Claire Album", "verdict": "competitive", "lineage": "Brussels clear-line comics", "thesis": "เรื่องฟาร์มเล่าเป็นการ์ตูนเส้นใส", "palette": ["#7fb3d5", "#d9b77a", "#c62828", "#111"], "materials": ["even ink line", "flat fill"], "viewport": "ช่องการ์ตูนกว้าง: ภูเขาหินปูน คอกวัว แพ็กเกจ", "risk": "อาจดูเป็นงานเด็กสำหรับผู้ซื้อ B2B", "case": "เล่าเรื่องชุมชนชัด แต่ผู้ซื้อฮาลาลไม่เห็นตัวเองในการ์ตูน" },
+    { "id": "challenger-storm", "kind": "challenger", "catalogId": "dream-surreal-impossible-worlds-alphabet-storm", "label": "Alphabet Storm", "verdict": "declined", "lineage": "typographic weather", "thesis": "ตัวอักษรกลายเป็นพายุ", "palette": ["#fff", "#111", "#b8bcc2"], "materials": ["type as matter"], "viewport": "คำลอยเป็นเมฆ", "risk": "สินค้าหายไป", "case": "ไม่แสดงสินค้าหรือฮาลาล", "kept": "ตัวอักษรขนาดอนุสาวรีย์" },
+    { "id": "challenger-section", "kind": "challenger", "catalogId": "architecture-inhabitable-space-daylight-section", "label": "Daylight Section", "verdict": "declined", "lineage": "architectural sections", "thesis": "ภาพตัดอาคารกับแสงแดด", "palette": ["#f3f1ea", "#2b2b2b", "#e7b53b"], "materials": ["limewash"], "viewport": "ภาพตัดยาวต่อเนื่อง", "risk": "ห่างจากอาหาร", "case": "ไม่เกี่ยวกับผู้ซื้อเนื้อ", "kept": "ทั้งหน้าเป็นแผ่นเดียวต่อเนื่อง" },
+    { "id": "challenger-bench", "kind": "challenger", "catalogId": "operate-a-cutting-bench-select-rail", "label": "Cutting Bench Rail", "verdict": "declined", "lineage": "film editing bench", "thesis": "รางฟิล์มส้ม", "palette": ["#000", "#ff6a13"], "materials": ["film grain"], "viewport": "รางฟิล์มพาดหน้า", "risk": "เครื่องมือตัดต่อ", "case": "ไม่เกี่ยวกับสตูลหรือฮาลาล", "kept": "หมึกเดียวคุมหนึ่งในสามของจอ" },
+    { "id": "challenger-cyworld", "kind": "challenger", "catalogId": "cyworld-minihompy-room", "label": "Minihompy Room", "verdict": "declined", "lineage": "Cyworld", "thesis": "ห้องจิ๋วไอโซเมตริก", "palette": ["#f6d6e0", "#cfe8f7", "#fff"], "materials": ["pastel tiles"], "viewport": "ห้องตกแต่งได้", "risk": "ไม่เข้ากับผู้ซื้อ", "case": "ผิดวัฒนธรรมและกลุ่มเป้าหมาย", "kept": "ตัวนับและสถานะเล็กๆ ที่ซื่อตรง" },
+    { "id": "challenger-racing", "kind": "challenger", "catalogId": "digital-design-canon-antialiased-racing-league", "label": "Racing League", "verdict": "declined", "lineage": "Y2K racing identities", "thesis": "สติกเกอร์ทีมแข่ง", "palette": ["#ff6a00", "#e6ff00", "#3a3d40"], "materials": ["decals"], "viewport": "ตราทีมความเร็ว", "risk": "ผิดอารมณ์อาหารชุมชน", "case": "ไม่สื่อฮาลาลหรือฟาร์ม", "kept": "สีของทีมท่วม readout ที่ใช้งานอยู่" }
+  ],
+  "reroll": { "registers": ["safer", "bolder"] },
+  "buildPath": { "value": "code", "toggle": false },
+  "canon": true,
+  "canonCard": {
+    "kind": "canon",
+    "label": "มาตรฐานของหมวดนี้ (Halal food exporter)",
+    "thesis": "พื้นขาว สีเขียวฮาลาล ภาพสินค้าในการ์ด ตราฮาลาลด้านบน แบบเว็บส่งออกอาหารทั่วไป",
+    "palette": ["#ffffff", "#0f7a3d", "#222222"],
+    "materials": ["clean grid", "ภาพสินค้า"],
+    "viewport": "หัวข้อ + ภาพสินค้า + แถวตราฮาลาล",
+    "risk": "เหมือนผู้ส่งออกทุกราย"
+  },
+  "steer": true
+}

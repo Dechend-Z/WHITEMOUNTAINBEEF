@@ -1,0 +1,133 @@
+{
+  "schemaVersion": 2,
+  "generatedAt": "2026-10-21T00:00:00Z",
+  "title": "Design System: WHITE MOUNTAIN",
+  "extensions": {
+    "colorMeta": {
+      "signwriter-red": { "role": "primary", "displayName": "Signwriter Red", "canonical": "#c8231f", "tonalRamp": ["#3a0a09", "#5a0f0d", "#7c1512", "#9e1915", "#c8231f", "#de5a55", "#ee9c99", "#fadcda"] },
+      "signwriter-red-deep": { "role": "primary", "displayName": "Deep Signwriter Red", "canonical": "#9e1915", "tonalRamp": ["#2c0706", "#470b09", "#66110d", "#841511", "#9e1915", "#c24a45", "#e0928f", "#f6d8d6"] },
+      "board-gold": { "role": "secondary", "displayName": "Board Gold", "canonical": "#efc659", "tonalRamp": ["#3d2e08", "#5e470e", "#806216", "#a4801f", "#c9a038", "#efc659", "#f6dc97", "#fcf2d6"] },
+      "board-green": { "role": "neutral", "displayName": "Board Green", "canonical": "#1f5a3d", "tonalRamp": ["#0b2117", "#123425", "#174630", "#1f5a3d", "#2f7a55", "#5aa07c", "#9ccab1", "#dcefe4"] },
+      "board-green-deep": { "role": "neutral", "displayName": "Wall Green", "canonical": "#174630", "tonalRamp": ["#081a12", "#0f2a1e", "#174630", "#1e5a3e", "#2c7553", "#579a79", "#98c6ae", "#d9ede2"] },
+      "enamel-cream": { "role": "neutral", "displayName": "Enamel Cream", "canonical": "#f3ead6", "tonalRamp": ["#3a3324", "#5a5038", "#7a6e50", "#9c8f6c", "#bdb08c", "#d9ccb0", "#f3ead6", "#fbf6ea"] },
+      "enamel-cream-dim": { "role": "neutral", "displayName": "Dim Enamel", "canonical": "#d9ccb0", "tonalRamp": ["#36301f", "#544a33", "#73674a", "#958866", "#b6a985", "#d9ccb0", "#ebe2cd", "#f8f3e7"] },
+      "field-cream": { "role": "neutral", "displayName": "Field Cream", "canonical": "#fbf6ea", "tonalRamp": ["#3c3627", "#5d553d", "#7f7556", "#a19772", "#c3b993", "#e3dbc2", "#f3ead6", "#fbf6ea"] },
+      "board-ink": { "role": "neutral", "displayName": "Board Ink", "canonical": "#14241b", "tonalRamp": ["#14241b", "#22372b", "#344d3f", "#4a6656", "#678272", "#8ea596", "#bccbc1", "#e8eee9"] }
+    },
+    "typographyMeta": {
+      "display": { "displayName": "Display", "purpose": "WHITE MOUNTAIN wordmark, brush caps (Knewave self-hosted, Latin range)." },
+      "headline": { "displayName": "Headline", "purpose": "Board titles; script face swaps by :lang()." },
+      "item-name": { "displayName": "Item Name", "purpose": "Active-script product name and the hanging plaque lettering." },
+      "price": { "displayName": "Price", "purpose": "Gold Lalezar tabular prices on items and rail." },
+      "title": { "displayName": "Title", "purpose": "Export manager's name in gold Lalezar." },
+      "body": { "displayName": "Body", "purpose": "Running text in Sarabun (Vazirmatn for Arabic)." },
+      "label": { "displayName": "Label", "purpose": "Buttons, tags, nav, form labels." }
+    },
+    "shadows": [],
+    "frames": [
+      { "name": "board-edge", "value": "border: 6px double #efc659", "purpose": "Every section board." },
+      { "name": "panel-line", "value": "border: 3px solid #14241b", "purpose": "Every cream panel, photo and button." },
+      { "name": "photo-double", "value": "border: 3px solid #14241b; outline: 3px solid #f3ead6 (or #efc659)", "purpose": "Menu photos and the plate logo." }
+    ],
+    "motion": [
+      { "name": "plaque-hover", "value": "background-color 160ms ease-out", "purpose": "Plaque button fill change." },
+      { "name": "plaque-swing", "value": "transform 260ms cubic-bezier(0.16, 1, 0.3, 1); rotate(-1.5deg), origin 50% -1.6rem", "purpose": "Hanging plaque swings on its cords on hover." },
+      { "name": "repaint", "value": "520ms cubic-bezier(0.16, 1, 0.3, 1); clip-path inset(0 100% 0 0) to inset(0), mirrored in RTL", "purpose": "Language switch re-letters names, hook and board headlines. Off under prefers-reduced-motion." }
+    ],
+    "breakpoints": [
+      { "name": "single-column", "value": "60rem" },
+      { "name": "narrow", "value": "40rem" }
+    ]
+  },
+  "components": [
+    {
+      "name": "Hanging Plaque",
+      "kind": "button",
+      "refersTo": "hanging-plaque",
+      "description": "Primary CTA: a red painted plaque hung from gold cords; swings on hover.",
+      "html": "<div class=\"ds-hang-wrap\"><a class=\"ds-plaque-hang\" href=\"#\">Request a quote</a></div>",
+      "css": ".ds-hang-wrap { background: #1f5a3d; padding: 2.5rem 1.5rem 1.5rem; } .ds-plaque-hang { position: relative; display: inline-block; font: 400 1.6rem/1 Knewave, Lalezar, serif; color: #f3ead6; text-decoration: none; background: #c8231f; border: 3px solid #14241b; outline: 3px solid #efc659; padding: 1rem 1.6rem 0.9rem; border-radius: 0; transform-origin: 50% -1.6rem; transition: transform 260ms cubic-bezier(0.16, 1, 0.3, 1), background-color 160ms ease-out; } .ds-plaque-hang::before { content: ''; position: absolute; left: 18%; right: 18%; bottom: calc(100% + 3px); height: 1.6rem; background: url(\"data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 26' preserveAspectRatio='none'%3E%3Cpath d='M1 26L50 3L99 26' fill='none' stroke='%23efc659' stroke-width='2.5' vector-effect='non-scaling-stroke'/%3E%3Ccircle cx='50' cy='3' r='3' fill='%23efc659'/%3E%3C/svg%3E\") no-repeat center / 100% 100%; } .ds-plaque-hang:hover { background: #9e1915; transform: rotate(-1.5deg); } .ds-plaque-hang:focus-visible { outline: 3px solid #efc659; outline-offset: 3px; }"
+    },
+    {
+      "name": "Plaque Button",
+      "kind": "button",
+      "refersTo": "plaque",
+      "description": "Red painted plaque button (send actions).",
+      "html": "<button class=\"ds-plaque\">Send by email</button>",
+      "css": ".ds-plaque { display: inline-flex; align-items: center; gap: 0.55rem; font: 600 1.05rem/1 Sarabun, system-ui, sans-serif; color: #f3ead6; background: #c8231f; border: 3px solid #14241b; outline: 2px solid #c8231f; padding: 0.95rem 1.3rem 0.9rem; border-radius: 0; cursor: pointer; transition: background-color 160ms ease-out; } .ds-plaque:hover { background: #9e1915; } .ds-plaque:focus-visible { outline: 3px solid #efc659; outline-offset: 3px; }"
+    },
+    {
+      "name": "Quiet Plaque",
+      "kind": "button",
+      "refersTo": "plaque-quiet",
+      "description": "Cream secondary plaque (Chat on LINE).",
+      "html": "<a class=\"ds-plaque-quiet\" href=\"#\"><svg viewBox=\"0 0 24 24\" width=\"20\" height=\"20\" aria-hidden=\"true\"><path d=\"M4 5h16v11H9l-5 4z\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linejoin=\"round\"/></svg>Chat on LINE</a>",
+      "css": ".ds-plaque-quiet { display: inline-flex; align-items: center; gap: 0.55rem; font: 600 1.05rem/1 Sarabun, system-ui, sans-serif; text-decoration: none; color: #14241b; background: #f3ead6; border: 3px solid #14241b; outline: 2px solid #f3ead6; padding: 0.95rem 1.3rem 0.9rem; border-radius: 0; transition: background-color 160ms ease-out; } .ds-plaque-quiet:hover { background: #d9ccb0; } .ds-plaque-quiet:focus-visible { outline: 3px solid #efc659; outline-offset: 3px; }"
+    },
+    {
+      "name": "Language Tags",
+      "kind": "nav",
+      "refersTo": "lang-tag",
+      "description": "Small painted tags in the board's top beam; active is solid gold.",
+      "html": "<div class=\"ds-tags\"><button aria-pressed=\"true\">EN</button><button aria-pressed=\"false\">ไทย</button><button aria-pressed=\"false\">中文</button><button aria-pressed=\"false\">عربي</button></div>",
+      "css": ".ds-tags { display: flex; gap: 0.35rem; background: #174630; padding: 0.6rem; border-bottom: 2px solid #efc659; } .ds-tags button { font: 600 0.9rem/1 Sarabun, Vazirmatn, system-ui, sans-serif; color: #f3ead6; background: transparent; border: 2px solid #d9ccb0; padding: 0.45rem 0.6rem 0.4rem; border-radius: 0; cursor: pointer; } .ds-tags button:hover { border-color: #efc659; color: #efc659; } .ds-tags button[aria-pressed='true'] { background: #efc659; border-color: #efc659; color: #14241b; } .ds-tags button:focus-visible { outline: 3px solid #efc659; outline-offset: 3px; }"
+    },
+    {
+      "name": "Menu Item Row",
+      "kind": "card",
+      "refersTo": "add-button",
+      "description": "Board row: framed photo, multi-script name with active script large, gold price, cream add button.",
+      "html": "<div class=\"ds-board\"><div class=\"ds-item\"><div class=\"ds-item-img\"></div><div><p class=\"ds-names\"><span class=\"ds-primary\">Herbal beef jerky</span><span>เนื้อสมุนไพร</span><span>草本牛肉干</span><span lang=\"ar\">لحم بقري مجفف بالأعشاب</span></p></div><p class=\"ds-price\">150 <abbr>THB</abbr></p><button class=\"ds-add\">+ Add to order</button></div></div>",
+      "css": ".ds-board { background: #1f5a3d; border: 6px double #efc659; padding: 1.5rem; color: #f3ead6; font-family: Sarabun, system-ui, sans-serif; } .ds-item { display: grid; grid-template-columns: 6rem minmax(0, 1fr) auto auto; gap: 0.75rem 1.5rem; align-items: center; padding-block: 1.4rem; border-bottom: 2px dashed rgba(243, 234, 214, 0.35); } .ds-item-img { aspect-ratio: 1; background: #c8231f; border: 3px solid #14241b; outline: 3px solid #f3ead6; } .ds-names { margin: 0; display: flex; flex-wrap: wrap; gap: 0.15rem 0.9rem; font-size: 0.95rem; color: #d9ccb0; line-height: 1.3; } .ds-primary { flex-basis: 100%; font: 400 2rem/1.1 Knewave, Lalezar, serif; color: #f3ead6; } .ds-price { margin: 0; font: 400 2.4rem/1 Lalezar, serif; color: #efc659; font-variant-numeric: tabular-nums; white-space: nowrap; } .ds-price abbr { font: 600 0.9rem/1 Sarabun, sans-serif; text-decoration: none; color: #d9ccb0; } .ds-add { font: 600 0.95rem/1 Sarabun, sans-serif; color: #14241b; background: #f3ead6; border: 3px solid #14241b; padding: 0.75rem 0.9rem; border-radius: 0; cursor: pointer; } .ds-add:hover { background: #efc659; } .ds-add:focus-visible { outline: 3px solid #efc659; outline-offset: 3px; }"
+    },
+    {
+      "name": "Price Rail",
+      "kind": "custom",
+      "refersTo": "price",
+      "description": "Gold-ruled strip of the four items and prices along the hero board.",
+      "html": "<ol class=\"ds-rail\"><li><a href=\"#\"><span>Chinese-style braised beef</span><b>300 THB</b></a></li><li><a href=\"#\"><span>Herbal beef jerky</span><b>150 THB</b></a></li><li><a href=\"#\"><span>Crispy beef snack</span><b>120 THB</b></a></li><li><a href=\"#\"><span>Phuk Rak</span><b>90 THB</b></a></li></ol>",
+      "css": ".ds-rail { list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); background: #1f5a3d; color: #f3ead6; border-top: 2px solid #efc659; border-bottom: 2px solid #efc659; font-family: Sarabun, sans-serif; } .ds-rail li + li { border-inline-start: 2px solid #efc659; } .ds-rail a { display: flex; flex-direction: column; justify-content: space-between; gap: 0.4rem; padding: 0.8rem 1rem; height: 100%; color: inherit; text-decoration: none; font-weight: 700; line-height: 1.25; } .ds-rail a:hover { background: #174630; } .ds-rail a:focus-visible { outline: 3px solid #efc659; outline-offset: 3px; } .ds-rail b { font: 400 1.5rem/1 Lalezar, serif; color: #efc659; font-variant-numeric: tabular-nums; white-space: nowrap; }"
+    },
+    {
+      "name": "Order Chit Field",
+      "kind": "input",
+      "refersTo": "chit-field",
+      "description": "Field Cream input with 2px ink border on the cream order chit.",
+      "html": "<div class=\"ds-chit\"><h3>Order slip</h3><label>Your name<input type=\"text\"></label></div>",
+      "css": ".ds-chit { background: #f3ead6; color: #14241b; border: 3px solid #14241b; padding: 1.5rem; font-family: Sarabun, sans-serif; } .ds-chit h3 { margin: 0 0 1rem; font: 400 2.2rem/1.05 Knewave, Lalezar, serif; color: #c8231f; } .ds-chit label { display: grid; gap: 0.3rem; font-weight: 600; font-size: 0.95rem; } .ds-chit input { font: 400 1rem/1.4 Sarabun, sans-serif; color: #14241b; background: #fbf6ea; border: 2px solid #14241b; border-radius: 0; padding: 0.65rem 0.7rem; caret-color: #c8231f; } .ds-chit input:focus-visible { outline: 3px solid #efc659; outline-offset: 3px; }"
+    }
+  ],
+  "narrative": {
+    "northStar": "The Satun Kedai Signboard",
+    "overview": "The site is a stack of hand-painted signboards from a southern Muslim tea shop in Satun. Each section is its own green board with a doubled gold edge, set on a deeper green wall. Product names are lettered in several scripts side by side, the way kedai boards letter Thai, Jawi and Rumi together; whichever language is active is painted large and the others sit small beneath it. Prices are painted in gold numerals, and the thing for sale is picked out in signwriter red.\n\nEverything is flat sign paint: solid fills, one even 3px ink line around every cream panel and photo, double-ruled gold edges on boards, no gradients and no shadows. Cream enamel panels (the hero pack frame, the order chit, the brochure sheet) are pinned onto the green the way a shop pins a photo or a docket onto its board.\n\nThe world refuses the white-grid exporter page with a row of green halal badges.",
+    "keyCharacteristics": [
+      "Green board grounds (two greens: wall and board) with 6px double gold board edges.",
+      "Cream enamel panels and photo frames, each outlined with a 3px ink line.",
+      "Signwriter red reserved for actions and the selected item; gold for rules, prices and active states.",
+      "Brush-lettered display (Knewave, self-hosted) for Latin; Chonburi Thai, Lalezar Arabic and prices, ZCOOL QingKe HuangYou Chinese; Sarabun / Vazirmatn for reading.",
+      "Multi-script product names, active script large.",
+      "Hanging plaque CTA on painted gold cords; gold-ruled price rail; cream order chit.",
+      "Language switch \"repaints\" lettering with a left-to-right (RTL: right-to-left) clip wipe."
+    ],
+    "rules": [
+      { "name": "The Red Means Sale Rule", "body": "Signwriter red marks only what you act on to buy: the CTA plaques and the selected item. Headings on green are cream, prices are gold; red never decorates.", "section": "colors" },
+      { "name": "The Gold Is Paint Rule", "body": "Gold is a flat line or numeral colour. It is never a gradient, a metallic sheen or a fill behind body text.", "section": "colors" },
+      { "name": "The Active Script Rule", "body": "Every product name is shown in all four scripts; the active language is painted large in its own sign face and the other three sit small beneath. Never show only one script.", "section": "typography" },
+      { "name": "The Painted Numerals Rule", "body": "Prices are Lalezar, gold, tabular, never in the body face.", "section": "typography" },
+      { "name": "The Flat Paint Rule", "body": "Every surface is a solid fill. If something needs to stand forward, give it a cream panel and an ink line, or a second outline, never a shadow.", "section": "elevation" }
+    ],
+    "dos": [
+      "**Do** put every section on its own Board Green board with a 6px double gold edge.",
+      "**Do** outline every cream panel, photo and button with a 3px Board Ink line.",
+      "**Do** show product names in all four scripts with the active one large in its own sign face.",
+      "**Do** paint prices in gold Lalezar with tabular figures.",
+      "**Do** keep the hanging plaque as the primary call to action."
+    ],
+    "donts": [
+      "**Don't** add shadows, gradients or rounded corners.",
+      "**Don't** use Signwriter Red for decoration or headings on green; it marks what is for sale.",
+      "**Don't** fall back to a white grid with a row of green halal badges.",
+      "**Don't** set display lettering in the body sans or a system face."
+    ]
+  }
+}
