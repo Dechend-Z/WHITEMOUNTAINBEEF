@@ -181,7 +181,6 @@ main { max-width: 82rem; margin: 0 auto; }
 .rail a { display: flex; flex-direction: column; justify-content: space-between; gap: 0.4rem; padding: 0.8rem 1rem; text-decoration: none; height: 100%; }
 .rail a:hover { background: var(--board-deep); }
 .rail-name { font-weight: 700; line-height: 1.25; }
-.rail-price { font: 400 1.5rem/1 "Lalezar", serif; color: var(--gold); white-space: nowrap; font-variant-numeric: tabular-nums; }
 
 /* Menu board */
 .board-head { display: flex; flex-wrap: wrap; align-items: end; justify-content: space-between; gap: 0.5rem 2rem; padding-bottom: 1rem; border-bottom: 2px solid var(--gold); }
@@ -191,13 +190,28 @@ main { max-width: 82rem; margin: 0 auto; }
 .items { list-style: none; margin: 0; padding: 0; }
 .item {
   display: grid;
-  grid-template-columns: clamp(5.5rem, 12vw, 8.5rem) minmax(0, 1fr) auto auto;
+  grid-template-columns: clamp(5.5rem, 12vw, 8.5rem) minmax(0, 1fr) auto;
   gap: 0.75rem clamp(1rem, 2.5vw, 2rem);
   align-items: center;
   padding-block: 1.4rem;
   border-bottom: 2px dashed rgba(243, 234, 214, 0.35);
 }
-.item > img { aspect-ratio: 1; object-fit: cover; border: var(--line) solid var(--ink); outline: 3px solid var(--cream); }
+/* Product photo opens full size */
+.zoom { position: relative; display: block; padding: 0; border: var(--line) solid var(--ink); outline: 3px solid var(--cream); background: var(--ink); cursor: zoom-in; }
+.zoom img { aspect-ratio: 1; object-fit: cover; width: 100%; }
+.zoom-hint { position: absolute; inset-inline-end: -3px; bottom: -3px; display: grid; place-items: center; width: 2.1rem; height: 2.1rem; background: var(--gold); color: var(--ink); border: 2px solid var(--ink); transition: background-color 160ms ease-out; }
+.zoom-hint svg { width: 1.1rem; height: 1.1rem; }
+.zoom:hover .zoom-hint, .zoom:focus-visible .zoom-hint { background: var(--cream); }
+.zoom:hover { outline-color: var(--gold); }
+
+.viewer { padding: 0.75rem; border: var(--line) solid var(--ink); outline: 3px solid var(--gold); background: var(--cream); color: var(--ink); max-width: min(94vw, 60rem); max-height: 94vh; }
+.viewer::backdrop { background: rgb(23 70 48 / 0.9); }
+.viewer[open] { display: flex; flex-direction: column; gap: 0.6rem; }
+.viewer-bar { display: flex; align-items: center; justify-content: space-between; gap: 1rem; }
+.viewer-title { font: 400 clamp(1.2rem, 2.6vw, 1.6rem)/1.2 var(--display); color: var(--ink); }
+.viewer-close { display: grid; place-items: center; width: 2.75rem; height: 2.75rem; flex: none; background: var(--red); color: var(--cream); border: var(--line) solid var(--ink); cursor: pointer; }
+.viewer-close:hover { background: var(--red-deep); }
+.viewer-img { width: auto; max-width: 100%; max-height: calc(94vh - 5.5rem); object-fit: contain; margin-inline: auto; border: 2px solid var(--ink); }
 .names { display: flex; flex-wrap: wrap; align-items: baseline; gap: 0.15rem 0.9rem; font-size: 0.95rem; color: var(--cream-dim); font-family: var(--text); line-height: 1.3; }
 .names span { order: 2; }
 .names .primary { order: 1; flex-basis: 100%; font-family: var(--display); font-size: clamp(1.5rem, 3vw, 2.25rem); line-height: 1.1; color: var(--cream); }
@@ -206,8 +220,6 @@ main { max-width: 82rem; margin: 0 auto; }
 .names .primary:lang(en) { font-family: "Knewave", serif; }
 .names .primary:lang(ar) { font-family: "Lalezar", serif; }
 .desc { margin-top: 0.45rem; max-width: 52ch; }
-.price { font: 400 clamp(1.8rem, 3.5vw, 2.6rem)/1 "Lalezar", serif; color: var(--gold); white-space: nowrap; font-variant-numeric: tabular-nums; }
-.price abbr { font: 600 0.9rem/1 var(--text); text-decoration: none; color: var(--cream-dim); }
 .add {
   display: inline-flex; align-items: center; gap: 0.4rem;
   font: 600 0.95rem/1 var(--text);
@@ -226,9 +238,8 @@ main { max-width: 82rem; margin: 0 auto; }
 .chit h2 { color: var(--red); }
 .chit-note { margin-top: 0.5rem; max-width: 60ch; }
 .slip { list-style: none; margin: 1.25rem 0 0; padding: 0; border-top: 2px solid var(--ink); }
-.slip li { display: grid; grid-template-columns: minmax(0, 1fr) auto auto; gap: 0.75rem; align-items: center; padding-block: 0.6rem; border-bottom: 1px solid var(--cream-dim); }
+.slip li { display: grid; grid-template-columns: minmax(0, 1fr) auto; gap: 0.75rem; align-items: center; padding-block: 0.6rem; border-bottom: 1px solid var(--cream-dim); }
 .slip .n { font-weight: 600; }
-.slip .sub { font-variant-numeric: tabular-nums; min-width: 6ch; text-align: end; }
 .qty { display: inline-flex; align-items: center; border: 2px solid var(--ink); }
 .qty button { background: none; border: 0; padding: 0.4rem; cursor: pointer; color: var(--ink); display: grid; }
 .qty button:hover { background: var(--gold); }
@@ -312,9 +323,8 @@ main { max-width: 82rem; margin: 0 auto; }
   .tags { margin-inline-start: auto; }
   .brand span { display: none; }
   .item { grid-template-columns: 5rem minmax(0, 1fr); }
-  .item > img { grid-row: span 2; align-self: start; }
-  .price { grid-column: 2; }
+  .item > .zoom { align-self: start; }
+  .zoom-hint { width: 1.6rem; height: 1.6rem; }
+  .zoom-hint svg { width: 0.9rem; height: 0.9rem; }
   .add { grid-column: 1 / -1; justify-content: center; }
-  .slip li { grid-template-columns: minmax(0, 1fr) auto; }
-  .slip .sub { grid-column: 2; }
 }

@@ -28,9 +28,9 @@ Buyers arrive from a shared link, mostly on phones. Quotes and orders happen by 
 
 ## Capabilities and Constraints
 
-- Products (openlink): Chinese-style braised beef (เนื้อตุ๋นยาจีน), 200 g net box, 300 THB; Crispy Beef Snack (premium, "97% fat free, high protein, low carb, oven baked" on pack), 120 THB; Herbal Beef Jerky (เนื้อสมุนไพร), 150 THB; Phuk Rak, Southern Thai love-knot pastry with beef filling, 90 THB. Retail prices; export pricing not published.
+- Products (openlink): Chinese-style braised beef (เนื้อตุ๋นยาจีน), 200 g net box, 300 THB; Crispy Beef Snack (premium, "97% fat free, high protein, low carb, oven baked" on pack), 120 THB; Herbal Beef Jerky (เนื้อสมุนไพร), 150 THB; Phuk Rak, Southern Thai love-knot pastry with beef filling, 90 THB. Retail prices; the owner asked (2026-10-22) that no price appears on the site, so all prices are on request.
 - Contact: Ms. Jirapachara Jankaew, Export Manager. Tel 064 403 1524. LINE https://line.me/ti/p/smoS2zVStO. Facebook https://www.facebook.com/share/1Cyzo1xkGL/. Map https://maps.app.goo.gl/5RP3sWMkBq8SLPkK8. Address: 159 Moo 4, Khao Khao Subdistrict, La-ngu District, Satun 91110, Thailand.
-- Contact channels confirmed by owner: LINE, phone, Messenger (via the Facebook page), email ksskids@outlook.com.
+- Contact channels confirmed by owner: LINE, phone, email ksskids@outlook.com. Messenger and Facebook were removed from the site at the owner's request (2026-10-22).
 - Languages: English default, plus Thai, 中文, عربي (Arabic in RTL).
 - No MOQ, shelf life, export markets or certificate numbers confirmed. Do not invent.
 

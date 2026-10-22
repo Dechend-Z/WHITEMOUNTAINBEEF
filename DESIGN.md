@@ -210,11 +210,11 @@ Small painted signboards.
 ### Hanging Plaque (signature CTA)
 The main "Request a quote" action: a red plaque lettered in the display face, 3px ink border plus 3px gold outline, hung from two gold cords meeting at a nail (SVG pseudo-element). On hover it swings (rotate -1.5deg around a point above it, 260ms cubic-bezier(0.16, 1, 0.3, 1)) and deepens to Deep Signwriter Red.
 
-### Price Rail
-A strip of the four items along the bottom of the hero board: gold-ruled top and bottom, gold dividers between cells, bold name over a gold Lalezar price. Rows hover to Wall Green. 2×2 under 60rem.
+### Product Rail
+A strip of the four item names along the bottom of the hero board: gold-ruled top and bottom, gold dividers between cells, bold names linking to each item. Rows hover to Wall Green. 2×2 under 60rem. No prices (owner request, 2026-10-22).
 
 ### Menu Items (list rows)
-Photo (3px ink border, 3px cream outline) / multi-script names and description / gold price / cream add button. Selected item: add button turns red, the active name turns gold.
+Photo (3px ink border, 3px cream outline; a button with a gold magnifier tag that opens the full image in a cream viewer dialog) / multi-script names and description / cream add button. No prices. Selected item: add button turns red, the active name turns gold.
 
 ### Order Chit (card)
 - **Corner Style:** square.
@@ -237,7 +237,7 @@ On language switch, product names, the hook and board headlines are re-lettered 
 - **Do** put every section on its own Board Green board with a 6px double gold edge.
 - **Do** outline every cream panel, photo and button with a 3px Board Ink line.
 - **Do** show product names in all four scripts with the active one large in its own sign face.
-- **Do** paint prices in gold Lalezar with tabular figures.
+- **Do** keep prices off the site; prices are on request (owner request, 2026-10-22).
 - **Do** keep the hanging plaque as the primary call to action.
 
 ### Don't:

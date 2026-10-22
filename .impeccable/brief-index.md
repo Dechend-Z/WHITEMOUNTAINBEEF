@@ -1,6 +1,6 @@
 Scope: index.html, the brand's one-page site replacing openlink. Mode: Persuade.
 Audience: export / B2B halal buyers, mostly on phones; secondary Thai retail customers.
-Action: contact the Export Manager (LINE, phone, Messenger, email) for quotes.
+Action: contact the Export Manager (LINE, phone, email) for quotes.
 Proof: real packaging photos, farm brochure (cover.jpg), halal mark of the Islamic Committee Office of Thailand on pack, PSU Startup 2017 selection, OTOP.
 Constraints: EN default, TH / 中文 / عربي switch, Arabic RTL. Static GitHub Pages. No invented MOQ, shelf life, markets.
 

@@ -8,7 +8,8 @@ const T = {
     "cta-quote": "Request a quote", "cta-line": "Chat on LINE",
     "hero-cap": "Chinese-style braised beef · 200 g box",
     "menu-title": "Today's board",
-    "menu-note": "Retail prices in Thai baht. Export and wholesale prices on request.",
+    "menu-note": "Prices on request: send an order slip or message us on LINE.",
+    "zoom": "View larger photo", "close": "Close",
     "d-braise": "Slow-braised beef in Chinese herbal broth. 200 g net, boxed.",
     "d-jerky": "Farm beef cured with black pepper, turmeric and lemongrass to an old local recipe.",
     "d-crispy": "Oven-baked beef crisps. The pack reads 97% fat free, high protein, low carb.",
@@ -45,7 +46,8 @@ const T = {
     "cta-quote": "ขอใบเสนอราคา", "cta-line": "คุยทาง LINE",
     "hero-cap": "เนื้อตุ๋นยาจีน · กล่อง 200 กรัม",
     "menu-title": "ป้ายสินค้าวันนี้",
-    "menu-note": "ราคาขายปลีกเป็นบาท ราคาส่งและราคาส่งออกสอบถามได้",
+    "menu-note": "สอบถามราคาได้ ส่งใบสั่งสินค้าหรือทักทาง LINE",
+    "zoom": "ดูรูปใหญ่", "close": "ปิด",
     "d-braise": "เนื้อตุ๋นช้าในน้ำซุปยาจีน น้ำหนักสุทธิ 200 กรัม บรรจุกล่อง",
     "d-jerky": "เนื้อจากฟาร์ม หมักพริกไทยดำ ขมิ้น ตะไคร้ ตามสูตรโบราณของชุมชน",
     "d-crispy": "เนื้อแผ่นอบกรอบ บนซองระบุ ปราศจากไขมัน 97% โปรตีนสูง คาร์บต่ำ",
@@ -82,7 +84,8 @@ const T = {
     "cta-quote": "索取报价", "cta-line": "LINE 联系",
     "hero-cap": "中式药膳炖牛肉 · 200 克盒装",
     "menu-title": "今日招牌",
-    "menu-note": "零售价以泰铢计。出口及批发价格请询价。",
+    "menu-note": "价格请询价：发送订货单或通过 LINE 联系我们。",
+    "zoom": "查看大图", "close": "关闭",
     "d-braise": "以中式药材汤慢炖的牛肉。净重 200 克，盒装。",
     "d-jerky": "农场牛肉，按当地古方以黑胡椒、姜黄和香茅腌制。",
     "d-crispy": "烘烤牛肉脆片。包装标注：97% 无脂、高蛋白、低碳水。",
@@ -119,7 +122,8 @@ const T = {
     "cta-quote": "اطلب عرض سعر", "cta-line": "تواصل عبر LINE",
     "hero-cap": "لحم بقري مطهو بالأعشاب الصينية · علبة 200 غ",
     "menu-title": "لوحة اليوم",
-    "menu-note": "أسعار التجزئة بالبات التايلاندي. أسعار التصدير والجملة عند الطلب.",
+    "menu-note": "الأسعار عند الطلب: أرسل قسيمة الطلب أو راسلنا عبر LINE.",
+    "zoom": "عرض الصورة بحجم أكبر", "close": "إغلاق",
     "d-braise": "لحم بقري مطهو ببطء في مرق الأعشاب الصينية. الوزن الصافي 200 غ، في علبة.",
     "d-jerky": "لحم من المزرعة متبل بالفلفل الأسود والكركم وعشبة الليمون وفق وصفة محلية قديمة.",
     "d-crispy": "رقائق لحم مخبوزة في الفرن. مكتوب على العبوة: خالية من الدهون بنسبة 97%، غنية بالبروتين، قليلة الكربوهيدرات.",
@@ -164,6 +168,8 @@ const form = document.querySelector(".chit-form");
 const errorEl = form.querySelector(".form-error");
 const copiedEl = form.querySelector(".copied");
 const slipTextEl = form.querySelector(".slip-text");
+const viewer = document.getElementById("viewer");
+const viewerImg = viewer.querySelector(".viewer-img");
 
 const t = (key) => T[lang][key] ?? T.en[key];
 
@@ -198,6 +204,7 @@ function setLang(next, animate = true) {
     document.body.classList.add("repaint");
   }
   slipTextEl.setAttribute("aria-label", t("order-title"));
+  viewer.querySelector(".viewer-close").setAttribute("aria-label", t("close"));
   try { localStorage.setItem("wm-lang", lang); } catch (e) {}
 }
 
@@ -208,6 +215,7 @@ function syncItem(item) {
   btn.setAttribute("aria-pressed", String(on));
   btn.querySelector("span").textContent = on ? t("added") : t("add");
   btn.querySelector("use").setAttribute("href", on ? "#i-minus" : "#i-plus");
+  item.querySelector(".zoom").setAttribute("aria-label", `${t("zoom")}: ${itemName(item)}`);
 }
 
 function renderSlip() {
@@ -217,13 +225,11 @@ function renderSlip() {
     const li = document.createElement("li");
     const name = itemName(item);
     li.innerHTML = `<span class="n"></span>
-      <span class="qty"><button type="button" data-step="-1"><svg aria-hidden="true"><use href="#i-minus"/></svg></button><output></output><button type="button" data-step="1"><svg aria-hidden="true"><use href="#i-plus"/></svg></button></span>
-      <bdi class="sub"></bdi>`;
+      <span class="qty"><button type="button" data-step="-1"><svg aria-hidden="true"><use href="#i-minus"/></svg></button><output></output><button type="button" data-step="1"><svg aria-hidden="true"><use href="#i-plus"/></svg></button></span>`;
     li.querySelector(".n").textContent = name;
     li.querySelector("[data-step='-1']").setAttribute("aria-label", `${t("less")}: ${name}`);
     li.querySelector("[data-step='1']").setAttribute("aria-label", `${t("more")}: ${name}`);
     li.querySelector("output").textContent = qty;
-    li.querySelector(".sub").textContent = `${(qty * Number(item.dataset.price)).toLocaleString("en")} THB`;
     li.querySelectorAll("[data-step]").forEach((b) => b.addEventListener("click", () => {
       const n = qty + Number(b.dataset.step);
       if (n <= 0) slip.delete(id); else slip.set(id, n);
@@ -243,6 +249,19 @@ items.forEach((item) => {
     renderSlip();
   });
 });
+
+// tap a product photo to see it full size
+items.forEach((item) => {
+  item.querySelector(".zoom").addEventListener("click", () => {
+    const img = item.querySelector(".zoom img");
+    viewerImg.src = img.currentSrc || img.src;
+    viewerImg.alt = itemName(item);
+    viewer.querySelector(".viewer-title").textContent = itemName(item);
+    viewer.showModal();
+  });
+});
+viewer.querySelector(".viewer-close").addEventListener("click", () => viewer.close());
+viewer.addEventListener("click", (e) => { if (e.target === viewer) viewer.close(); });
 
 // after the first failed send, the error clears as soon as the slip becomes valid
 let tried = false;

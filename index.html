@@ -22,6 +22,8 @@
     <symbol id="i-mail" viewBox="0 0 24 24"><path d="M3 5h18v14H3z M3 6l9 7 9-7" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/></symbol>
     <symbol id="i-pin" viewBox="0 0 24 24"><path d="M12 21s-7-7-7-12a7 7 0 0 1 14 0c0 5-7 12-7 12z M12 11.5a2.5 2.5 0 1 0 0-5 2.5 2.5 0 0 0 0 5z" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/></symbol>
     <symbol id="i-plus" viewBox="0 0 24 24"><path d="M12 5v14M5 12h14" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"/></symbol>
+    <symbol id="i-zoom" viewBox="0 0 24 24"><path d="M10.5 4a6.5 6.5 0 1 0 0 13 6.5 6.5 0 0 0 0-13zM15.5 15.5 21 21M10.5 7.5v6M7.5 10.5h6" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"/></symbol>
+    <symbol id="i-close" viewBox="0 0 24 24"><path d="M6 6l12 12M18 6 6 18" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"/></symbol>
     <symbol id="i-minus" viewBox="0 0 24 24"><path d="M5 12h14" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"/></symbol>
   </svg>
 
@@ -65,22 +67,22 @@
         <img src="asset/p-braise.jpg" alt="White Mountain Chinese-style braised beef, 200 g boxed pack" width="900" height="1200">
         <figcaption data-i18n="hero-cap">Chinese-style braised beef · 200 g box</figcaption>
       </figure>
-      <ol class="rail" aria-label="Prices">
-        <li><a href="#item-braise"><span class="rail-name" data-for="braise"></span><bdi class="rail-price">300 THB</bdi></a></li>
-        <li><a href="#item-jerky"><span class="rail-name" data-for="jerky"></span><bdi class="rail-price">150 THB</bdi></a></li>
-        <li><a href="#item-crispy"><span class="rail-name" data-for="crispy"></span><bdi class="rail-price">120 THB</bdi></a></li>
-        <li><a href="#item-phukrak"><span class="rail-name" data-for="phukrak"></span><bdi class="rail-price">90 THB</bdi></a></li>
+      <ol class="rail" aria-label="Products">
+        <li><a href="#item-braise"><span class="rail-name" data-for="braise"></span></a></li>
+        <li><a href="#item-jerky"><span class="rail-name" data-for="jerky"></span></a></li>
+        <li><a href="#item-crispy"><span class="rail-name" data-for="crispy"></span></a></li>
+        <li><a href="#item-phukrak"><span class="rail-name" data-for="phukrak"></span></a></li>
       </ol>
     </section>
 
     <section class="board menu" id="menu" aria-labelledby="menu-title">
       <div class="board-head">
         <h2 id="menu-title" data-i18n="menu-title">Today's board</h2>
-        <p data-i18n="menu-note">Retail prices in Thai baht. Export and wholesale prices on request.</p>
+        <p data-i18n="menu-note">Prices on request: send an order slip or message us on LINE.</p>
       </div>
       <ol class="items">
-        <li class="item" id="item-braise" data-id="braise" data-price="300">
-          <img src="asset/p-braise.jpg" alt="" loading="lazy" width="900" height="1200">
+        <li class="item" id="item-braise" data-id="braise">
+          <button type="button" class="zoom"><img src="asset/p-braise.jpg" alt="" loading="lazy" width="900" height="1200"><span class="zoom-hint" aria-hidden="true"><svg><use href="#i-zoom"/></svg></span></button>
           <div class="item-body">
             <h3 class="names">
               <span lang="en">Chinese-style braised beef</span>
@@ -90,11 +92,10 @@
             </h3>
             <p class="desc" data-i18n="d-braise">Slow-braised beef in Chinese herbal broth. 200 g net, boxed.</p>
           </div>
-          <p class="price"><bdi><span>300</span> <abbr title="Thai baht">THB</abbr></bdi></p>
           <button type="button" class="add"><svg aria-hidden="true"><use href="#i-plus"/></svg><span data-i18n="add">Add to order</span></button>
         </li>
-        <li class="item" id="item-jerky" data-id="jerky" data-price="150">
-          <img src="asset/p-jerky.jpg" alt="" loading="lazy" width="900" height="1200">
+        <li class="item" id="item-jerky" data-id="jerky">
+          <button type="button" class="zoom"><img src="asset/p-jerky.jpg" alt="" loading="lazy" width="900" height="1200"><span class="zoom-hint" aria-hidden="true"><svg><use href="#i-zoom"/></svg></span></button>
           <div class="item-body">
             <h3 class="names">
               <span lang="en">Herbal beef jerky</span>
@@ -104,11 +105,10 @@
             </h3>
             <p class="desc" data-i18n="d-jerky">Farm beef cured with black pepper, turmeric and lemongrass to an old local recipe.</p>
           </div>
-          <p class="price"><bdi><span>150</span> <abbr title="Thai baht">THB</abbr></bdi></p>
           <button type="button" class="add"><svg aria-hidden="true"><use href="#i-plus"/></svg><span data-i18n="add">Add to order</span></button>
         </li>
-        <li class="item" id="item-crispy" data-id="crispy" data-price="120">
-          <img src="asset/p-crispy.jpg" alt="" loading="lazy" width="899" height="1200">
+        <li class="item" id="item-crispy" data-id="crispy">
+          <button type="button" class="zoom"><img src="asset/p-crispy.jpg" alt="" loading="lazy" width="899" height="1200"><span class="zoom-hint" aria-hidden="true"><svg><use href="#i-zoom"/></svg></span></button>
           <div class="item-body">
             <h3 class="names">
               <span lang="en">Crispy beef snack</span>
@@ -118,11 +118,10 @@
             </h3>
             <p class="desc" data-i18n="d-crispy">Oven-baked beef crisps. The pack reads 97% fat free, high protein, low carb.</p>
           </div>
-          <p class="price"><bdi><span>120</span> <abbr title="Thai baht">THB</abbr></bdi></p>
           <button type="button" class="add"><svg aria-hidden="true"><use href="#i-plus"/></svg><span data-i18n="add">Add to order</span></button>
         </li>
-        <li class="item" id="item-phukrak" data-id="phukrak" data-price="90">
-          <img src="asset/p-phukrak.jpg" alt="" loading="lazy" width="1200" height="961">
+        <li class="item" id="item-phukrak" data-id="phukrak">
+          <button type="button" class="zoom"><img src="asset/p-phukrak.jpg" alt="" loading="lazy" width="1200" height="961"><span class="zoom-hint" aria-hidden="true"><svg><use href="#i-zoom"/></svg></span></button>
           <div class="item-body">
             <h3 class="names">
               <span lang="en">Phuk Rak, beef-filled pastry</span>
@@ -132,7 +131,6 @@
             </h3>
             <p class="desc" data-i18n="d-phukrak">Southern Thai love-knot pastry with a beef filling, packed in jars.</p>
           </div>
-          <p class="price"><bdi><span>90</span> <abbr title="Thai baht">THB</abbr></bdi></p>
           <button type="button" class="add"><svg aria-hidden="true"><use href="#i-plus"/></svg><span data-i18n="add">Add to order</span></button>
         </li>
       </ol>
@@ -190,7 +188,6 @@
         <li><a href="https://line.me/ti/p/smoS2zVStO" target="_blank" rel="noopener"><svg aria-hidden="true"><use href="#i-chat"/></svg><span>LINE</span><small>smoS2zVStO</small></a></li>
         <li><a href="tel:+66644031524"><svg aria-hidden="true"><use href="#i-phone"/></svg><span data-i18n="phone">Phone</span><small dir="ltr">+66 64 403 1524</small></a></li>
         <li><a href="mailto:ksskids@outlook.com"><svg aria-hidden="true"><use href="#i-mail"/></svg><span data-i18n="email">Email</span><small>ksskids@outlook.com</small></a></li>
-        <li><a href="https://www.facebook.com/share/1Cyzo1xkGL/" target="_blank" rel="noopener"><svg aria-hidden="true"><use href="#i-chat"/></svg><span>Facebook / Messenger</span><small>White Mountain</small></a></li>
         <li><a href="https://maps.app.goo.gl/5RP3sWMkBq8SLPkK8" target="_blank" rel="noopener"><svg aria-hidden="true"><use href="#i-pin"/></svg><span data-i18n="map">Farm on the map</span><small data-i18n="address">159 Moo 4, Khao Khao, La-ngu, Satun 91110, Thailand</small></a></li>
       </ul>
     </section>
@@ -200,6 +197,14 @@
     <p lang="th">วิสาหกิจชุมชนเขาขาวโคขุนฟาร์ม · Khao Khao Kho Khun Farm Community Enterprise</p>
     <p>© 2026 WHITE MOUNTAIN Halal Beef</p>
   </footer>
+
+  <dialog class="viewer" id="viewer" aria-labelledby="viewer-title">
+    <div class="viewer-bar">
+      <p class="viewer-title" id="viewer-title"></p>
+      <button type="button" class="viewer-close" aria-label="Close"><svg aria-hidden="true"><use href="#i-close"/></svg></button>
+    </div>
+    <img class="viewer-img" alt="">
+  </dialog>
 
   <script src="script.js"></script>
 </body>
